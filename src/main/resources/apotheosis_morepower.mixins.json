@@ -9,6 +9,10 @@
     "AttributeAffixMixin",
     "StepFunctionMixin",
     "LootControllerMixin",
+    "AttributeAffixModifierMixin",
+    "AffixHelperMixin",
+    "DynamicHolderAccessor",
+    "AdventureModuleClientMixin",
     "SocketTooltipRendererMixin"
   ],
   "client": [
