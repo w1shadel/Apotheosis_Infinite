@@ -1,4 +1,4 @@
-# Apotheosis Infinite Addon
+# Apotheosis: Infinite
 An addon for Apotheosis that allows for infinite scaling of equipment stats.
 ## Overview
 ・This mod modifies the core logic of Apotheosis' reforging and socketing systems to allow for:
