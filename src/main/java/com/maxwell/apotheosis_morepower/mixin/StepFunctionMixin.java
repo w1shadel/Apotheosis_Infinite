@@ -8,9 +8,15 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(value = StepFunction.class, remap = false)
 public class StepFunctionMixin {
-    @Shadow @Final protected float min;
-    @Shadow @Final protected float step;
-    @Shadow @Final protected int steps;
+    @Shadow
+    @Final
+    protected float min;
+    @Shadow
+    @Final
+    protected float step;
+    @Shadow
+    @Final
+    protected int steps;
 
     /**
      * @author Maxwell
@@ -18,7 +24,6 @@ public class StepFunctionMixin {
      */
     @Overwrite
     public float get(float level) {
-        // 元のコードにある Mth.clamp(level, 0, 1) を削除
-        return this.min + (level * (float)this.steps * this.step);
+        return this.min + (level * (float) this.steps * this.step);
     }
 }
