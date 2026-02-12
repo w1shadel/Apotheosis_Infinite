@@ -16,3 +16,11 @@ An addon for Apotheosis that allows for infinite scaling of equipment stats.
 
 ・Clean Naming: Item names display a simple rank counter (e.g., (+125)).
 Note: This mod dramatically alters the balance of Apotheosis.
+
+
+
+
+
+
+
+I never want to use Mixin again. If you're going to complain, make your own.
