@@ -18,7 +18,7 @@ public class LootControllerMixin {
             at = @At("RETURN"),
             remap = false
     )
-    private static void maxwell$injectInfinitePrefixes(ItemStack stack, LootCategory cat, LootRarity rarity, RandomSource rand, CallbackInfoReturnable<ItemStack> cir) {
+    private static void lovevivi$injectInfinitePrefixes(ItemStack stack, LootCategory cat, LootRarity rarity, RandomSource rand, CallbackInfoReturnable<ItemStack> cir) {
         ItemStack resultStack = cir.getReturnValue();
         if (resultStack != null && !resultStack.isEmpty()) {
             long seed = rand.nextLong();

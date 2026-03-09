@@ -15,7 +15,7 @@ import java.util.List;
 public class LootCategoryMixin {
 
     @Inject(method = "forItem", at = @At("HEAD"), cancellable = true)
-    private static void maxwell$makeEverythingReforgeable(ItemStack stack, CallbackInfoReturnable<LootCategory> cir) {
+    private static void lovevivi$makeEverythingReforgeable(ItemStack stack, CallbackInfoReturnable<LootCategory> cir) {
         if (!InfiniteConfig.ENABLE_ALL_ITEMS_REFORGE.get()) return;
         if (!stack.isEmpty()) {
             LootCategory original = LootCategory.VALUES.stream()

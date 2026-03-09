@@ -24,7 +24,7 @@ public abstract class ReforgingMenuMixin {
 
 
     @Inject(method = "slotsChanged", at = @At("TAIL"))
-    private void maxwell$onSlotsChanged(Container pContainer, CallbackInfo ci) {
+    private void lovevivi$onSlotsChanged(Container pContainer, CallbackInfo ci) {
         ItemStack input = this.itemInv.getStackInSlot(0);
         if (input.isEmpty()) return;
 
