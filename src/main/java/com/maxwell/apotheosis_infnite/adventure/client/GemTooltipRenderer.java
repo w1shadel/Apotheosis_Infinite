@@ -9,26 +9,36 @@ import org.joml.Matrix4f;
 
 import java.util.List;
 
+
 public class GemTooltipRenderer {
+    private static final int SOCKET_SIZE = 9;
+
     public static void render(List<GemGroupEntry> entries, int spacing, int x, int y, GuiGraphics gfx) {
         for (int i = 0; i < entries.size(); i++) {
-            gfx.blit(SocketTooltipRenderer.SOCKET, x, y + spacing * i, 0, 0, 0, 9, 9, 9, 9);
+            int currentY = y + spacing * i;
+            gfx.blit(SocketTooltipRenderer.SOCKET, x, currentY, 0, 0, 0, SOCKET_SIZE, SOCKET_SIZE, SOCKET_SIZE, SOCKET_SIZE);
+
             GemGroupEntry entry = entries.get(i);
             if (entry.instance().isValid()) {
                 gfx.pose().pushPose();
-                gfx.pose().scale(0.5F, 0.5F, 1);
-                gfx.renderFakeItem(entry.instance().gemStack(), 2 * x + 1, 2 * y + 1 + 2 * spacing * i);
+                gfx.pose().translate(x + 1, currentY + 1, 0);
+                gfx.pose().scale(0.5F, 0.5F, 1.0F);
+                gfx.renderFakeItem(entry.instance().gemStack(), 0, 0);
                 gfx.pose().popPose();
             }
         }
     }
 
-    public static void renderText(List<GemGroupEntry> entries, int spacing, int pX, int pY, Matrix4f pMatrix4f, MultiBufferSource.BufferSource pBufferSource, Font pFont) {
+    public static void renderText(List<GemGroupEntry> entries, int spacing, int x, int y, Matrix4f matrix, MultiBufferSource.BufferSource buffer, Font font) {
         for (int i = 0; i < entries.size(); i++) {
             GemGroupEntry entry = entries.get(i);
-            Component text = SocketTooltipRenderer.getSocketDesc(entry.instance());
-            if (entry.count() > 1) text = text.copy().append(" x" + entry.count());
-            pFont.drawInBatch(text, pX + 12, pY + 1 + spacing * i, 0xAABBCC, true, pMatrix4f, pBufferSource, Font.DisplayMode.NORMAL, 0, 15728880);
+            Component desc = SocketTooltipRenderer.getSocketDesc(entry.instance());
+
+            Component finalSafeText = entry.count() > 1
+                    ? desc.copy().append(Component.literal(" x" + entry.count()))
+                    : desc;
+
+            font.drawInBatch(finalSafeText, x + 12, y + 1 + spacing * i, 0xAABBCC, true, matrix, buffer, Font.DisplayMode.NORMAL, 0, 15728880);
         }
     }
 }

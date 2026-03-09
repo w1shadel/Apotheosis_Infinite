@@ -1,6 +1,5 @@
 package com.maxwell.apotheosis_infnite.adventure.util;
 
-
 import dev.shadowsoffire.apotheosis.adventure.affix.Affix;
 import dev.shadowsoffire.apotheosis.adventure.affix.AffixHelper;
 import dev.shadowsoffire.apotheosis.adventure.affix.AffixInstance;
@@ -24,12 +23,12 @@ public class NameBuilder {
         }
         List<AffixInstance> nameList = new ArrayList<>();
         for (Map.Entry<DynamicHolder<? extends Affix>, AffixInstance> entry : affixes.entrySet()) {
-                if (entry.getKey() != null && entry.getKey().isBound() && entry.getValue() != null) {
-                    Component testPrefix = entry.getValue().getName(true);
-                    if (testPrefix != null) {
-                        nameList.add(entry.getValue());
-                    }
+            if (entry.getKey() != null && entry.getKey().isBound() && entry.getValue() != null) {
+                Component testPrefix = entry.getValue().getName(true);
+                if (testPrefix != null) {
+                    nameList.add(entry.getValue());
                 }
+            }
         }
         if (nameList.isEmpty()) {
             return;
@@ -46,10 +45,10 @@ public class NameBuilder {
         }
         Object suffix = "";
         if (nameList.size() > 1) {
-                Component testSuffix = nameList.get(nameList.size() - 1).getName(false);
-                if (testSuffix != null) {
-                    suffix = testSuffix;
-                }
+            Component testSuffix = nameList.get(nameList.size() - 1).getName(false);
+            if (testSuffix != null) {
+                suffix = testSuffix;
+            }
         }
         String key = nameList.size() > 1 ? "misc.apotheosis.affix_name.three" : "misc.apotheosis.affix_name.two";
         Style style = rarity != null ? Style.EMPTY.withColor(rarity.getColor()) : Style.EMPTY;

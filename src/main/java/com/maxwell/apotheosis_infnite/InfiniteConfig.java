@@ -5,7 +5,6 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public class InfiniteConfig {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
-
     public static final ForgeConfigSpec.IntValue MAX_SOCKETS;
     public static final ForgeConfigSpec.BooleanValue ENABLE_ALL_ITEMS_REFORGE;
 

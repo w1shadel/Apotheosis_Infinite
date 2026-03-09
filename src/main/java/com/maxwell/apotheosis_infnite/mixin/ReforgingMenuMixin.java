@@ -17,17 +17,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ReforgingMenu.class)
 public abstract class ReforgingMenuMixin {
-
-    @Shadow protected InternalItemHandler itemInv;
-    @Shadow protected InternalItemHandler choicesInv;
-    @Shadow @Final protected RandomSource random;
-
+    @Shadow
+    protected InternalItemHandler itemInv;
+    @Shadow
+    protected InternalItemHandler choicesInv;
+    @Shadow
+    @Final
+    protected RandomSource random;
 
     @Inject(method = "slotsChanged", at = @At("TAIL"))
     private void lovevivi$onSlotsChanged(Container pContainer, CallbackInfo ci) {
         ItemStack input = this.itemInv.getStackInSlot(0);
         if (input.isEmpty()) return;
-
         for (int i = 0; i < 3; i++) {
             ItemStack output = this.choicesInv.getStackInSlot(i);
             if (!output.isEmpty() && output.hasTag()) {
