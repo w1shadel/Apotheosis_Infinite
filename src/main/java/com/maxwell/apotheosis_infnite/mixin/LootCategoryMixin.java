@@ -1,5 +1,6 @@
 package com.maxwell.apotheosis_infnite.mixin;
 
+import com.maxwell.apotheosis_infnite.InfiniteConfig;
 import dev.shadowsoffire.apotheosis.adventure.loot.LootCategory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -15,6 +16,7 @@ public class LootCategoryMixin {
 
     @Inject(method = "forItem", at = @At("HEAD"), cancellable = true)
     private static void maxwell$makeEverythingReforgeable(ItemStack stack, CallbackInfoReturnable<LootCategory> cir) {
+        if (!InfiniteConfig.ENABLE_ALL_ITEMS_REFORGE.get()) return;
         if (!stack.isEmpty()) {
             LootCategory original = LootCategory.VALUES.stream()
                     .filter(c -> c.isValid(stack))

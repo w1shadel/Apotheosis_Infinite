@@ -21,9 +21,7 @@ import java.util.*;
 
 @Mixin(value = SocketTooltipRenderer.class, priority = Integer.MAX_VALUE)
 public abstract class SocketTooltipGroupingMixin {
-    @Shadow
-    @Final
-    private int spacing;
+    @Shadow @Final private int spacing;
     private List<GemGroupEntry> maxwell$entries;
     private boolean maxwell$isGrouped = false;
 

@@ -1,5 +1,6 @@
 package com.maxwell.apotheosis_infnite.mixin;
 
+import com.maxwell.apotheosis_infnite.InfiniteConfig;
 import com.maxwell.apotheosis_infnite.adventure.util.AffixMerger;
 import dev.shadowsoffire.apotheosis.adventure.affix.reforging.ReforgingMenu;
 import dev.shadowsoffire.apotheosis.adventure.socket.SocketHelper;
@@ -17,8 +18,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = ReforgingMenu.class)
 public abstract class ReforgingMenuMixin {
 
-    @Shadow @Final protected InternalItemHandler itemInv;
-    @Shadow @Final protected InternalItemHandler choicesInv;
+    @Shadow protected InternalItemHandler itemInv;
+    @Shadow protected InternalItemHandler choicesInv;
     @Shadow @Final protected RandomSource random;
 
 
@@ -31,7 +32,7 @@ public abstract class ReforgingMenuMixin {
             ItemStack output = this.choicesInv.getStackInSlot(i);
             if (!output.isEmpty() && output.hasTag()) {
                 int totalSockets = SocketHelper.getSockets(input) + SocketHelper.getSockets(output);
-                SocketHelper.setSockets(output, Math.min(50, totalSockets));
+                SocketHelper.setSockets(output, Math.min(InfiniteConfig.MAX_SOCKETS.get(), totalSockets));
                 AffixMerger.mergeAffixes(input, output, this.random.nextLong());
             }
         }
