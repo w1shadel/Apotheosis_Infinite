@@ -9,7 +9,6 @@ import org.joml.Matrix4f;
 
 import java.util.List;
 
-
 public class GemTooltipRenderer {
     private static final int SOCKET_SIZE = 9;
 
@@ -17,7 +16,6 @@ public class GemTooltipRenderer {
         for (int i = 0; i < entries.size(); i++) {
             int currentY = y + spacing * i;
             gfx.blit(SocketTooltipRenderer.SOCKET, x, currentY, 0, 0, 0, SOCKET_SIZE, SOCKET_SIZE, SOCKET_SIZE, SOCKET_SIZE);
-
             GemGroupEntry entry = entries.get(i);
             if (entry.instance().isValid()) {
                 gfx.pose().pushPose();
@@ -33,11 +31,9 @@ public class GemTooltipRenderer {
         for (int i = 0; i < entries.size(); i++) {
             GemGroupEntry entry = entries.get(i);
             Component desc = SocketTooltipRenderer.getSocketDesc(entry.instance());
-
             Component finalSafeText = entry.count() > 1
                     ? desc.copy().append(Component.literal(" x" + entry.count()))
                     : desc;
-
             font.drawInBatch(finalSafeText, x + 12, y + 1 + spacing * i, 0xAABBCC, true, matrix, buffer, Font.DisplayMode.NORMAL, 0, 15728880);
         }
     }
