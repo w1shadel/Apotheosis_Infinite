@@ -9,7 +9,14 @@
     "SocketTooltipGroupingMixin",
     "LootControllerMixin",
     "LootCategoryMixin",
-    "ShortStatMixin"
+    "ShortStatMixin",
+    "EnchHooksModifierMixin",
+    "RealEnchantmentHelperMixin",
+    "ApothEnchantmentMenuMixin",
+    "AugmentingScreenMixin",
+    "AugmentingMenuMixin",
+    "AffixInstanceMixin",
+    "AttributeAffixMixin"
   ],
   "client": [],
   "server": [],
