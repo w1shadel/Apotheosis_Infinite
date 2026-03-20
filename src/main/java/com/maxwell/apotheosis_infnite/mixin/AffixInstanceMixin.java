@@ -8,9 +8,8 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(value = AffixInstance.class, remap = false)
 public class AffixInstanceMixin {
-
     @ModifyConstant(method = "withNewLevel", constant = @Constant(floatValue = 1.0F))
-    private float liftInternalClamp(float original) {
+    private float liftInternalLevelClamp(float original) {
         return InfiniteConfig.MAX_AFFIX_LEVEL.get().floatValue();
     }
 }

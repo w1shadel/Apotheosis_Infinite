@@ -16,7 +16,8 @@
     "AugmentingScreenMixin",
     "AugmentingMenuMixin",
     "AffixInstanceMixin",
-    "AttributeAffixMixin"
+    "AttributeAffixMixin",
+    "EnchantmentMixin"
   ],
   "client": [],
   "server": [],

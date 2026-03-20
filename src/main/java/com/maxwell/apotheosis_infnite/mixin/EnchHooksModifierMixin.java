@@ -9,8 +9,14 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(value = EnchHooks.class, remap = false)
 public class EnchHooksModifierMixin {
 
-    @ModifyReturnValue(method = "getMaxLevel", at = @At("RETURN"))
-    private static int apoth_modifyMaxLevel(int original, Enchantment ench) {
-        return InfiniteConfig.MAX_ENCHANTMENT_LEVEL.get();
+    @ModifyReturnValue(method = {"getMaxLevel", "getMaxLootLevel"}, at = @At("RETURN"))
+    private static int apoth_modifyInfiniteLevels(int original, Enchantment ench) {
+        if (ench == null) return original;
+
+        if (ench.isCurse() && !InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.get()) {
+            return 1;
+        }
+
+        return Math.min(InfiniteConfig.MAX_ENCHANTMENT_LEVEL.get(), 255);
     }
 }

@@ -9,8 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(value = AugmentingMenu.class, remap = false)
 public class AugmentingMenuMixin {
 
-
-    @ModifyConstant(method = "clickMenuButton", constant = @Constant(floatValue = 1.0F, ordinal = 0))
+    @ModifyConstant(method = "clickMenuButton", constant = @Constant(floatValue = 1.0F, ordinal = 0), remap = true)
     private float expandMenuLevelLimit(float original) {
         return InfiniteConfig.MAX_AFFIX_LEVEL.get().floatValue();
     }

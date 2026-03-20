@@ -9,6 +9,8 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,34 +18,8 @@ import java.util.Map;
 
 @Mixin(value = ApothEnchantmentMenu.class, remap = false)
 public class ApothEnchantmentMenuMixin {
-
-    @ModifyReturnValue(method = "isEnchantableEnough", at = @At("RETURN"))
-    private static boolean allowAllEnchantable(boolean original) {
-        return true;
-    }
-
-    @ModifyReturnValue(method = "getEnchantmentList", at = @At("RETURN"))
-    private List<EnchantmentInstance> modifyEnchantmentList(List<EnchantmentInstance> original, ItemStack stack) {
-        if (original == null || original.isEmpty()) return original;
-
-        Map<Enchantment, Integer> existingEnchants = EnchantmentHelper.getEnchantments(stack);
-        List<EnchantmentInstance> modifiedList = new ArrayList<>();
-
-        int configMax = InfiniteConfig.MAX_ENCHANTMENT_LEVEL.get();
-        int safeLimit = Math.min(configMax, 255);
-        boolean allowHighLevelCurses = InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.get();
-
-        for (EnchantmentInstance inst : original) {
-            int newLevel;
-            if (inst.enchantment.isCurse() && !allowHighLevelCurses) {
-                newLevel = 1;
-            } else {
-                int currentLevel = existingEnchants.getOrDefault(inst.enchantment, 0);
-                newLevel = Math.min(currentLevel + inst.level, safeLimit);
-            }
-            modifiedList.add(new EnchantmentInstance(inst.enchantment, newLevel));
-        }
-
-        return modifiedList;
+    @Inject(method = "isEnchantableEnough", at = @At("RETURN"), cancellable = true)
+    private static void allowEnchantingEvenIfEnchanted(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(true);
     }
 }

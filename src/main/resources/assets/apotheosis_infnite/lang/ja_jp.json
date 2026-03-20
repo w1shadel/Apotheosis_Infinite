@@ -1,10 +1,10 @@
 {
   "message.apotheosis_infnite.lol":"消滅の呪いが世界を破壊しました、二度とロード出来ると思うなよ。",
-  "item.apotheosis_infinite.curse_breaker": "浄化のスクロール",
+  "item.apotheosis_infnite.curse_breaker": "浄化のスクロール",
   "tooltip.apotheosis_infinite.curse_breaker.desc": "あらゆる呪いを無に帰す神秘的な巻物。",
   "tooltip.apotheosis_infinite.curse_breaker.usage": "使い方：インベントリ内でこの巻物を持ち、呪われたアイテムの上に重ねて右クリックすることで呪いを除去します。",
 
-  "item.apotheosis_infinite.config_checker": "無限化の導き",
+  "item.apotheosis_infnite.config_checker": "業火の本",
   "tooltip.apotheosis_infinite.config_checker.warning": "【警告】設定を確認してください",
   "tooltip.apotheosis_infinite.config_checker.instruction": "サーバー設定ファイル(config/apo_inf-common.toml)を必ず確認してください。",
   "tooltip.apotheosis_infinite.config_checker.detail": "※限界値の極端な上昇やワールド破壊設定は、データ破損やクラッシュを引き起こす恐れがあります。",

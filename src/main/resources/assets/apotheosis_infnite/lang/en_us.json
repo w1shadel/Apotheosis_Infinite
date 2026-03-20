@@ -1,10 +1,10 @@
 {
   "message.apotheosis_infnite.lol": "Vanishing Curse has destroyed the world; don't think you can load it again.",
-  "item.apotheosis_infinite.curse_breaker": "Curse Breaker",
+  "item.apotheosis_infnite.curse_breaker": "Curse Breaker",
   "tooltip.apotheosis_infinite.curse_breaker.desc": "A mystical scroll that purifies the most stubborn hexes.",
   "tooltip.apotheosis_infinite.curse_breaker.usage": "Usage: Pick up this item in your inventory and Right-Click it onto a cursed item to remove all curses.",
 
-  "item.apotheosis_infinite.config_checker": "Infinite Configuration Guide",
+  "item.apotheosis_infnite.config_checker": "Infernum libri",
   "tooltip.apotheosis_infinite.config_checker.warning": "[CRITICAL WARNING] READ BEFORE PROCEEDING",
   "tooltip.apotheosis_infinite.config_checker.instruction": "Please review 'apo_inf-common.toml' in your config folder.",
   "tooltip.apotheosis_infinite.config_checker.detail": "Extreme settings (e.g., Max Levels > 255 or World Destruction) can cause permanent data loss or crashes.",
