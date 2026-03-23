@@ -17,7 +17,9 @@
     "AugmentingMenuMixin",
     "AffixInstanceMixin",
     "AttributeAffixMixin",
-    "EnchantmentMixin"
+    "EnchantmentMixin",
+    "EsotericReforgingMenuMixin",
+    "AncientReforgingMenuMixin"
   ],
   "client": [],
   "server": [],
