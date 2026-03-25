@@ -34,24 +34,20 @@ public class CurseBreakerItem extends Item {
         ItemStack target = slot.getItem();
         Map<Enchantment, Integer> enchants = EnchantmentHelper.getEnchantments(target);
 
-        // 呪いエンチャントのみを抽出
         List<Enchantment> curses = enchants.keySet().stream()
                 .filter(Enchantment::isCurse)
-                .collect(Collectors.toList());
+                .toList();
 
         if (curses.isEmpty()) {
             return false;
         }
 
-        // 呪い以外のエンチャントのみを残した新しいマップを作成
         Map<Enchantment, Integer> cleanedEnchants = enchants.entrySet().stream()
                 .filter(entry -> !entry.getKey().isCurse())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
-        // アイテムを更新
         EnchantmentHelper.setEnchantments(cleanedEnchants, target);
 
-        // エフェクトと消費
         if (!player.getAbilities().instabuild) {
             scroll.shrink(1);
         }
