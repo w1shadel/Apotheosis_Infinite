@@ -94,8 +94,8 @@ dependencies {
     compileOnly fg.deobf("curse.maven:esoteric-reforging-forge-1150370:5989440")
     compileOnly fg.deobf("curse.maven:ancient-reforging-985468:5527109")
 
-    runtimeOnly fg.deobf("curse.maven:esoteric-reforging-forge-1150370:5989440")
-    runtimeOnly fg.deobf("curse.maven:ancient-reforging-985468:5527109")
+    compileOnly fg.deobf("curse.maven:esoteric-reforging-forge-1150370:5989440")
+    compileOnly fg.deobf("curse.maven:ancient-reforging-985468:5527109")
   // implementation fg.deobf("curse.maven:enchantlevelbrek-1110220:6802037")
     implementation fg.deobf("curse.maven:nbtedit-reborn-678133:5984630")
     implementation fg.deobf("curse.maven:apothic-attributes-898963:5634071")

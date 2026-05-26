@@ -5,10 +5,11 @@
   "tooltip.apotheosis_infinite.curse_breaker.usage": "使い方：インベントリ内でこの巻物を持ち、呪われたアイテムの上に重ねて右クリックすることで呪いを除去します。",
 
   "item.apotheosis_infnite.config_checker": "業火の本",
-  "tooltip.apotheosis_infinite.config_checker.warning": "【警告】設定を確認してください",
-  "tooltip.apotheosis_infinite.config_checker.instruction": "サーバー設定ファイル(config/apo_inf-common.toml)を必ず確認してください。",
-  "tooltip.apotheosis_infinite.config_checker.detail": "※限界値の極端な上昇やワールド破壊設定は、データ破損やクラッシュを引き起こす恐れがあります。",
+  "tooltip.apotheosis_infinite.config_checker.warning": "【警告】設定の変更について",
+  "tooltip.apotheosis_infinite.config_checker.instruction": "コマンド `/apoinf <設定名> <値>` で設定を変更できます。",
+  "tooltip.apotheosis_infinite.config_checker.detail": "例: `/apoinf max_sockets 50`。権限なしで誰でも実行可能です。",
 
   "text.apotheosis_infinite.limit_reached": "このアイテムは既に設定された上限に達しています。",
-  "text.apotheosis_infinite.safe_limit_notice": "補足：データ安定化のため、エンチャントはレベル255で制限されています。"
+  "text.apotheosis_infinite.safe_limit_notice": "補足：データ安定化のため、エンチャントはレベル255で制限されています。",
+  "message.apotheosis_infinite.config_changed": "%s を %s に設定しました。"
 }
