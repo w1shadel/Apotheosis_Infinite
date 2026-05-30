@@ -20,11 +20,17 @@ public class RealEnchantmentHelperMixin {
 
     @ModifyVariable(method = "selectEnchantment", at = @At(value = "STORE", ordinal = 0), remap = false, name = "enchants")
     private static Map<Enchantment, Integer> bypassExistingEnchantFilter(Map<Enchantment, Integer> original) {
-        return Collections.emptyMap();
+        if (InfiniteConfig.ENABLE_INFINITE_ENCHANTING.get()) {
+            return Collections.emptyMap();
+        }
+        return original;
     }
 
     @Inject(method = "selectEnchantment", at = @At("RETURN"), cancellable = true)
     private static void apoth_applyAdditiveLevels(RandomSource pRandom, ItemStack pStack, int pLevel, float quanta, float arcana, float rectification, boolean treasure, Set<Enchantment> blacklist, CallbackInfoReturnable<List<EnchantmentInstance>> cir) {
+        if (!InfiniteConfig.ENABLE_INFINITE_ENCHANTING.get()) {
+            return;
+        }
         List<EnchantmentInstance> original = cir.getReturnValue();
         if (original == null || original.isEmpty()) return;
 

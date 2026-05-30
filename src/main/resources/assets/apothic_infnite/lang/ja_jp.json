@@ -1,0 +1,15 @@
+{
+  "message.apothic_infnite.lol":"消滅の呪いが世界を破壊しました、二度とロード出来ると思うなよ。",
+  "item.apothic_infnite.curse_breaker": "浄化のスクロール",
+  "tooltip.apothic_infnite.curse_breaker.desc": "あらゆる呪いを無に帰す神秘的な巻物。",
+  "tooltip.apothic_infnite.curse_breaker.usage": "使い方：インベントリ内でこの巻物を持ち、呪われたアイテムの上に重ねて右クリックすることで呪いを除去します。",
+
+  "item.apothic_infnite.config_checker": "業火の本",
+  "tooltip.apothic_infnite.config_checker.warning": "【警告】設定の変更について",
+  "tooltip.apothic_infnite.config_checker.instruction": "コマンド `/apoinf <設定名> <値>` で設定を変更できます。",
+  "tooltip.apothic_infnite.config_checker.detail": "例: `/apoinf max_sockets 50`。権限なしで誰でも実行可能です。",
+
+  "text.apothic_infnite.limit_reached": "このアイテムは既に設定された上限に達しています。",
+  "text.apothic_infnite.safe_limit_notice": "補足：データ安定化のため、エンチャントはレベル255で制限されています。",
+  "message.apothic_infnite.config_changed": "%s を %s に設定しました。"
+}

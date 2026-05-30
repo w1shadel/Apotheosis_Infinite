@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = AFP.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class PlayerJoinEventHandler {
 
-    private static final String GIVEN_CHECKER_KEY = "apotheosis_infinite.given_config_checker";
+    private static final String GIVEN_CHECKER_KEY = "apothic_infnite.given_config_checker";
 
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {

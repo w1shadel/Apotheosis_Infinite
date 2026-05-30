@@ -18,9 +18,9 @@ public class ConfigCheckerItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.apotheosis_infinite.config_checker.warning").withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
-        tooltip.add(Component.translatable("tooltip.apotheosis_infinite.config_checker.instruction").withStyle(ChatFormatting.GOLD));
+        tooltip.add(Component.translatable("tooltip.apothic_infnite.config_checker.warning").withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
+        tooltip.add(Component.translatable("tooltip.apothic_infnite.config_checker.instruction").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("tooltip.apotheosis_infinite.config_checker.detail").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+        tooltip.add(Component.translatable("tooltip.apothic_infnite.config_checker.detail").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

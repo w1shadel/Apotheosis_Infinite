@@ -1,0 +1,15 @@
+{
+  "message.apothic_infnite.lol": "Vanishing Curse has destroyed the world; don't think you can load it again.",
+  "item.apothic_infnite.curse_breaker": "Curse Breaker",
+  "tooltip.apothic_infnite.curse_breaker.desc": "A mystical scroll that purifies the most stubborn hexes.",
+  "tooltip.apothic_infnite.curse_breaker.usage": "Usage: Pick up this item in your inventory and Right-Click it onto a cursed item to remove all curses.",
+
+  "item.apothic_infnite.config_checker": "Infernum libri",
+  "tooltip.apothic_infnite.config_checker.warning": "[WARNING] Configuration Changes",
+  "tooltip.apothic_infnite.config_checker.instruction": "Use command `/apoinf <setting_name> <value>` to change settings.",
+  "tooltip.apothic_infnite.config_checker.detail": "Example: `/apoinf max_sockets 50`. Available to all players without permissions.",
+
+  "text.apothic_infnite.limit_reached": "The power of this item has reached the configuration limit.",
+  "text.apothic_infnite.safe_limit_notice": "Note: Levels above 255 are capped at 255 for NBT stability.",
+  "message.apothic_infnite.config_changed": "Set %s to %s."
+}

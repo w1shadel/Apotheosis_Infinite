@@ -58,7 +58,7 @@ public class CurseBreakerItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.apotheosis_infinite.curse_breaker.desc").withStyle(ChatFormatting.GOLD));
-        tooltip.add(Component.translatable("tooltip.apotheosis_infinite.curse_breaker.usage").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.apothic_infnite.curse_breaker.desc").withStyle(ChatFormatting.GOLD));
+        tooltip.add(Component.translatable("tooltip.apothic_infnite.curse_breaker.usage").withStyle(ChatFormatting.GRAY));
     }
 }

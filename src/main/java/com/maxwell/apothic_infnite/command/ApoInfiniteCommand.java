@@ -21,14 +21,14 @@ public class ApoInfiniteCommand {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 
         dispatcher.register(Commands.literal("apoinf")
-                .requires(source -> true) // 権限なしで誰でも実行可能
+                .requires(source -> true)
                 .then(Commands.literal("max_sockets")
                         .then(Commands.argument("value", IntegerArgumentType.integer(1))
                                 .executes(context -> {
                                     int val = IntegerArgumentType.getInteger(context, "value");
                                     InfiniteConfig.MAX_SOCKETS.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "max_sockets", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "max_sockets", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("max_affix_level")
@@ -37,7 +37,7 @@ public class ApoInfiniteCommand {
                                     double val = DoubleArgumentType.getDouble(context, "value");
                                     InfiniteConfig.MAX_AFFIX_LEVEL.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "max_affix_level", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "max_affix_level", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("min_affix_level")
@@ -46,7 +46,7 @@ public class ApoInfiniteCommand {
                                     double val = DoubleArgumentType.getDouble(context, "value");
                                     InfiniteConfig.MIN_AFFIX_LEVEL.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "min_affix_level", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "min_affix_level", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("enable_all_items_reforge")
@@ -55,7 +55,7 @@ public class ApoInfiniteCommand {
                                     boolean val = BoolArgumentType.getBool(context, "value");
                                     InfiniteConfig.ENABLE_ALL_ITEMS_REFORGE.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "enable_all_items_reforge", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "enable_all_items_reforge", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("max_enchantment_level")
@@ -64,7 +64,17 @@ public class ApoInfiniteCommand {
                                     int val = IntegerArgumentType.getInteger(context, "value");
                                     InfiniteConfig.MAX_ENCHANTMENT_LEVEL.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "max_enchantment_level", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "max_enchantment_level", val), true);
+                                    return 1;
+                                })))
+
+                .then(Commands.literal("enable_infinite_enchanting")
+                        .then(Commands.argument("value", BoolArgumentType.bool())
+                                .executes(context -> {
+                                    boolean val = BoolArgumentType.getBool(context, "value");
+                                    InfiniteConfig.ENABLE_INFINITE_ENCHANTING.set(val);
+                                    InfiniteConfig.SPEC.save();
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "enable_infinite_enchanting", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("allow_high_level_curses")
@@ -73,7 +83,7 @@ public class ApoInfiniteCommand {
                                     boolean val = BoolArgumentType.getBool(context, "value");
                                     InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "allow_high_level_curses", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "allow_high_level_curses", val), true);
                                     return 1;
                                 })))
                 .then(Commands.literal("enable_world_destruction")
@@ -82,7 +92,7 @@ public class ApoInfiniteCommand {
                                     boolean val = BoolArgumentType.getBool(context, "value");
                                     InfiniteConfig.ENABLE_WORLD_DESTRUCTION.set(val);
                                     InfiniteConfig.SPEC.save();
-                                    context.getSource().sendSuccess(() -> Component.translatable("message.apotheosis_infinite.config_changed", "enable_world_destruction", val), true);
+                                    context.getSource().sendSuccess(() -> Component.translatable("message.apothic_infnite.config_changed", "enable_world_destruction", val), true);
                                     return 1;
                                 })))
         );

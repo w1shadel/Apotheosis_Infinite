@@ -11,6 +11,7 @@ public class InfiniteConfig {
     public static final ForgeConfigSpec.BooleanValue ENABLE_ALL_ITEMS_REFORGE;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> REFORGEABLE_CATEGORY_LIST;
     public static final ForgeConfigSpec.IntValue MAX_ENCHANTMENT_LEVEL;
+    public static final ForgeConfigSpec.BooleanValue ENABLE_INFINITE_ENCHANTING; 
     public static final ForgeConfigSpec.BooleanValue ENABLE_WORLD_DESTRUCTION;
     public static final ForgeConfigSpec.BooleanValue ALLOW_HIGH_LEVEL_CURSES;
     public static final ForgeConfigSpec.DoubleValue MAX_AFFIX_LEVEL;
@@ -57,6 +58,11 @@ public class InfiniteConfig {
         MAX_ENCHANTMENT_LEVEL = BUILDER.comment("The global maximum level for all enchantments.")
                 .defineInRange("max_enchantment_level", 100, 1, 255);
 
+        ENABLE_INFINITE_ENCHANTING = BUILDER.comment(
+                        "If true, items can be enchanted repeatedly even if they already possess enchantments,",
+                        "and applying the same enchantment will stack its level additively.")
+                .define("enable_infinite_enchanting", true);
+
         ALLOW_HIGH_LEVEL_CURSES = BUILDER.comment(
                         "Determines if Curse enchantments can be upgraded up to 'max_enchantment_level'.",
                         "If false, Curses will be locked to level 1 to minimize their negative impact",
@@ -78,7 +84,7 @@ public class InfiniteConfig {
                         "The developer is not responsible for any loss of data. Use at your own risk.")
                 .define("enable_world_destruction", false);
 
-        BUILDER.pop(); // Close Jokes
+        BUILDER.pop(); 
 
         SPEC = BUILDER.build();
     }
