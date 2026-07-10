@@ -12,6 +12,6 @@ public class AFP {
 
     public AFP(FMLJavaModLoadingContext context) {
         ModItems.ITEMS.register(context.getModEventBus());
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, InfiniteConfig.SPEC, "apo_inf-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, InfiniteConfig.SPEC, "apo_inf-server.toml");
     }
 }

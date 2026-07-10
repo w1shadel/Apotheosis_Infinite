@@ -44,7 +44,7 @@ public class InfiniteConfig {
         ENABLE_ALL_ITEMS_REFORGE = BUILDER.comment(
                         "If true, items that do not naturally support Apotheosis affixes",
                         "(including items from other mods) will be eligible for reforging.")
-                .define("enable_all_items_reforge", true);
+                .define("enable_all_items_reforge", false);
 
         REFORGEABLE_CATEGORY_LIST = BUILDER.comment(
                         "A list of LootCategory IDs to be utilized when 'enable_all_items_reforge' is active.",

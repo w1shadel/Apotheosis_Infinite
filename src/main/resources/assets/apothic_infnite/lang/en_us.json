@@ -7,7 +7,7 @@
   "item.apothic_infnite.config_checker": "Infernum libri",
   "tooltip.apothic_infnite.config_checker.warning": "[WARNING] Configuration Changes",
   "tooltip.apothic_infnite.config_checker.instruction": "Use command `/apoinf <setting_name> <value>` to change settings.",
-  "tooltip.apothic_infnite.config_checker.detail": "Example: `/apoinf max_sockets 50`. Available to all players without permissions.",
+  "tooltip.apothic_infnite.config_checker.detail": "Example: `/apoinf max_sockets 50`. Permissions are required. If you want to make changes without permissions, edit the file named `apoinf_server.toml`.",
 
   "text.apothic_infnite.limit_reached": "The power of this item has reached the configuration limit.",
   "text.apothic_infnite.safe_limit_notice": "Note: Levels above 255 are capped at 255 for NBT stability.",

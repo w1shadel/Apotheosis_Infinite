@@ -21,7 +21,7 @@ public class ApoInfiniteCommand {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 
         dispatcher.register(Commands.literal("apoinf")
-                .requires(source -> true)
+                .requires(source -> source.hasPermission(2))
                 .then(Commands.literal("max_sockets")
                         .then(Commands.argument("value", IntegerArgumentType.integer(1))
                                 .executes(context -> {
