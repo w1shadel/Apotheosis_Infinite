@@ -12,13 +12,16 @@ public class EnchantmentMixin {
     @Inject(method = "getMaxLevel", at = @At("RETURN"), cancellable = true)
     private void liftVanillaMaxLevel(CallbackInfoReturnable<Integer> cir) {
         Enchantment self = (Enchantment) (Object) this;
-
-        if (self.isCurse() && !InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.get()) {
+        boolean allowHighLevelCurses = InfiniteConfig.SPEC.isLoaded()
+                ? InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.get()
+                : InfiniteConfig.ALLOW_HIGH_LEVEL_CURSES.getDefault();
+        if (self.isCurse() && !allowHighLevelCurses) {
             cir.setReturnValue(1);
             return;
         }
-
-        int configMax = InfiniteConfig.MAX_ENCHANTMENT_LEVEL.get();
+        int configMax = InfiniteConfig.SPEC.isLoaded()
+                ? InfiniteConfig.MAX_ENCHANTMENT_LEVEL.get()
+                : InfiniteConfig.MAX_ENCHANTMENT_LEVEL.getDefault();
         cir.setReturnValue(Math.min(configMax, 255));
     }
 }
